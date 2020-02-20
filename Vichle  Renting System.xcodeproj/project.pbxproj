@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		BD465C7523F23C7B004E7C42 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C7423F23C7B004E7C42 /* main.swift */; };
+		BD465C7C23F23C8D004E7C42 /* person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C7B23F23C8D004E7C42 /* person.swift */; };
+		BD465C7E23F23CCF004E7C42 /* customers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C7D23F23CCF004E7C42 /* customers.swift */; };
+		BD465C8023F23CE3004E7C42 /* drivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C7F23F23CE3004E7C42 /* drivers.swift */; };
+		BD465C8223F23D08004E7C42 /* vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C8123F23D08004E7C42 /* vehicles.swift */; };
+		BDC8BCB123F3B81E003786FB /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8BCB023F3B81E003786FB /* Owner.swift */; };
+		BDC8BCB323F3B838003786FB /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8BCB223F3B838003786FB /* Bus.swift */; };
+		BDC8BCB523F3B84B003786FB /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8BCB423F3B84B003786FB /* Car.swift */; };
+		BDC8BCB723F3B88A003786FB /* MotorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8BCB623F3B88A003786FB /* MotorCycle.swift */; };
+		BDC8BCB923F3B99D003786FB /* vehicleRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8BCB823F3B99D003786FB /* vehicleRent.swift */; };
+		BDC8BCBF23F3BBAC003786FB /* DisplayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8BCBE23F3BBAC003786FB /* DisplayDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +35,16 @@
 /* Begin PBXFileReference section */
 		BD465C7123F23C7B004E7C42 /* Vichle  Renting System */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Vichle  Renting System"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD465C7423F23C7B004E7C42 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BD465C7B23F23C8D004E7C42 /* person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = person.swift; sourceTree = "<group>"; };
+		BD465C7D23F23CCF004E7C42 /* customers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customers.swift; sourceTree = "<group>"; };
+		BD465C7F23F23CE3004E7C42 /* drivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drivers.swift; sourceTree = "<group>"; };
+		BD465C8123F23D08004E7C42 /* vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vehicles.swift; sourceTree = "<group>"; };
+		BDC8BCB023F3B81E003786FB /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		BDC8BCB223F3B838003786FB /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
+		BDC8BCB423F3B84B003786FB /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		BDC8BCB623F3B88A003786FB /* MotorCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorCycle.swift; sourceTree = "<group>"; };
+		BDC8BCB823F3B99D003786FB /* vehicleRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vehicleRent.swift; sourceTree = "<group>"; };
+		BDC8BCBE23F3BBAC003786FB /* DisplayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +77,27 @@
 		BD465C7323F23C7B004E7C42 /* Vichle  Renting System */ = {
 			isa = PBXGroup;
 			children = (
+				BD94BAA623FE2100005E9AD1 /* Person */,
+				BD465C8123F23D08004E7C42 /* vehicles.swift */,
+				BDC8BCB223F3B838003786FB /* Bus.swift */,
+				BDC8BCB423F3B84B003786FB /* Car.swift */,
+				BDC8BCB623F3B88A003786FB /* MotorCycle.swift */,
+				BDC8BCB823F3B99D003786FB /* vehicleRent.swift */,
+				BDC8BCBE23F3BBAC003786FB /* DisplayDelegate.swift */,
 				BD465C7423F23C7B004E7C42 /* main.swift */,
 			);
 			path = "Vichle  Renting System";
+			sourceTree = "<group>";
+		};
+		BD94BAA623FE2100005E9AD1 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				BD465C7B23F23C8D004E7C42 /* person.swift */,
+				BD465C7F23F23CE3004E7C42 /* drivers.swift */,
+				BD465C7D23F23CCF004E7C42 /* customers.swift */,
+				BDC8BCB023F3B81E003786FB /* Owner.swift */,
+			);
+			path = Person;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +158,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDC8BCB323F3B838003786FB /* Bus.swift in Sources */,
+				BDC8BCBF23F3BBAC003786FB /* DisplayDelegate.swift in Sources */,
+				BD465C7C23F23C8D004E7C42 /* person.swift in Sources */,
+				BDC8BCB523F3B84B003786FB /* Car.swift in Sources */,
+				BDC8BCB123F3B81E003786FB /* Owner.swift in Sources */,
+				BD465C7E23F23CCF004E7C42 /* customers.swift in Sources */,
+				BDC8BCB723F3B88A003786FB /* MotorCycle.swift in Sources */,
 				BD465C7523F23C7B004E7C42 /* main.swift in Sources */,
+				BD465C8223F23D08004E7C42 /* vehicles.swift in Sources */,
+				BD465C8023F23CE3004E7C42 /* drivers.swift in Sources */,
+				BDC8BCB923F3B99D003786FB /* vehicleRent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
