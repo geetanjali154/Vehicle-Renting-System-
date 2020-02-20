@@ -7,6 +7,9 @@
 //
 
 import Foundation
+enum  VehicleTypes {
+    case BUS,CAR,MOTORCYCLE
+}
 protocol setvehicle:DisplayDelegate
 {
     
@@ -21,7 +24,7 @@ protocol setvehicle:DisplayDelegate
     var fuelType: String { get set }
     var baseRatePerDay:Int { get set }
     var basePerKm:Int { get set }
-    
+    var vehicletype:VehicleTypes{get set}
     
     func display()
 }

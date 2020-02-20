@@ -7,6 +7,6 @@
 //
 
 import Foundation
-enum busType{
+enum busType{ 
     
 }
