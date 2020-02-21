@@ -51,24 +51,16 @@ class Customers:Person{
     }
     func display() {
         print("************* CUSTOMER DETAILS **************")
-        print("Customer ID : \(id)")
-        print("Customer Full Name: \(firstName)" ,"\(lastName)")
-        print("Gender :\(gender)")
-        print("Birth Date :\(birthDate)")
-        print("Mobile Number :\(mobileNumber)")
-        print("Address :\(address)")
-        print("City :\(city)")
-        print("EmailID :\(String(describing: emailId))")
-        print("UserName :\(userName)")
-        print("Password :\(String(describing: password))")
-        
-        
-        
-        
-        
-        
-        print("Address : \(address)")
-        print("city : \(city)")
+        print("Customer ID : \(self.id)")
+        print("Customer Full Name: \(self.firstName)" ,"\(self.lastName)")
+        print("Gender :\(self.gender)")
+        print("Birth Date :\(self.birthDate)")
+        print("Mobile Number :\(self.mobileNumber)")
+        print("Address :\(self.address)")
+        print("City :\(self.city)")
+        print("EmailID :\(String(describing: self.emailId))")
+        print("UserName :\(self.userName)")
+        print("Password :\(String(describing: self.password))")
         
     }
     

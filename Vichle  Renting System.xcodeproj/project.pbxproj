@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0827A623FF4D86005377E8 /* SigletonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0827A523FF4D86005377E8 /* SigletonObject.swift */; };
 		BD465C7523F23C7B004E7C42 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C7423F23C7B004E7C42 /* main.swift */; };
 		BD465C7C23F23C8D004E7C42 /* person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C7B23F23C8D004E7C42 /* person.swift */; };
 		BD465C7E23F23CCF004E7C42 /* customers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C7D23F23CCF004E7C42 /* customers.swift */; };
 		BD465C8023F23CE3004E7C42 /* drivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C7F23F23CE3004E7C42 /* drivers.swift */; };
-		BD465C8223F23D08004E7C42 /* vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C8123F23D08004E7C42 /* vehicles.swift */; };
+		BD465C8223F23D08004E7C42 /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C8123F23D08004E7C42 /* Vehicles.swift */; };
 		BDC8BCB123F3B81E003786FB /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8BCB023F3B81E003786FB /* Owner.swift */; };
 		BDC8BCB323F3B838003786FB /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8BCB223F3B838003786FB /* Bus.swift */; };
 		BDC8BCB523F3B84B003786FB /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8BCB423F3B84B003786FB /* Car.swift */; };
@@ -33,12 +34,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BD0827A523FF4D86005377E8 /* SigletonObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigletonObject.swift; sourceTree = "<group>"; };
 		BD465C7123F23C7B004E7C42 /* Vichle  Renting System */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Vichle  Renting System"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD465C7423F23C7B004E7C42 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BD465C7B23F23C8D004E7C42 /* person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = person.swift; sourceTree = "<group>"; };
 		BD465C7D23F23CCF004E7C42 /* customers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customers.swift; sourceTree = "<group>"; };
 		BD465C7F23F23CE3004E7C42 /* drivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drivers.swift; sourceTree = "<group>"; };
-		BD465C8123F23D08004E7C42 /* vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vehicles.swift; sourceTree = "<group>"; };
+		BD465C8123F23D08004E7C42 /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
 		BDC8BCB023F3B81E003786FB /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		BDC8BCB223F3B838003786FB /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
 		BDC8BCB423F3B84B003786FB /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
@@ -78,13 +80,14 @@
 			isa = PBXGroup;
 			children = (
 				BD94BAA623FE2100005E9AD1 /* Person */,
-				BD465C8123F23D08004E7C42 /* vehicles.swift */,
+				BD465C8123F23D08004E7C42 /* Vehicles.swift */,
 				BDC8BCB223F3B838003786FB /* Bus.swift */,
 				BDC8BCB423F3B84B003786FB /* Car.swift */,
 				BDC8BCB623F3B88A003786FB /* MotorCycle.swift */,
 				BDC8BCB823F3B99D003786FB /* vehicleRent.swift */,
 				BDC8BCBE23F3BBAC003786FB /* DisplayDelegate.swift */,
 				BD465C7423F23C7B004E7C42 /* main.swift */,
+				BD0827A523FF4D86005377E8 /* SigletonObject.swift */,
 			);
 			path = "Vichle  Renting System";
 			sourceTree = "<group>";
@@ -165,8 +168,9 @@
 				BDC8BCB123F3B81E003786FB /* Owner.swift in Sources */,
 				BD465C7E23F23CCF004E7C42 /* customers.swift in Sources */,
 				BDC8BCB723F3B88A003786FB /* MotorCycle.swift in Sources */,
+				BD0827A623FF4D86005377E8 /* SigletonObject.swift in Sources */,
 				BD465C7523F23C7B004E7C42 /* main.swift in Sources */,
-				BD465C8223F23D08004E7C42 /* vehicles.swift in Sources */,
+				BD465C8223F23D08004E7C42 /* Vehicles.swift in Sources */,
 				BD465C8023F23CE3004E7C42 /* drivers.swift in Sources */,
 				BDC8BCB923F3B99D003786FB /* vehicleRent.swift in Sources */,
 			);
