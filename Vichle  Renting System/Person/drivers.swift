@@ -7,7 +7,11 @@
 //
 
 import Foundation
-class Driver: Person {
+class Driver: Person { 
+    //var emailId: String
+    
+    //var password: String
+    
     var id: Int
     
     var firstName: String
@@ -25,20 +29,20 @@ class Driver: Person {
     var city :String
       
     
-    var mobileNumber: String
+    var mobileNumber: Int
     
-    var emailId: String?
+    var emailId: String
     
     var userName: String
     
-    var password: String?
+    var password: String
     
     
     var drivingLicenseNumber:String
-    lazy var isDrivingHistoryCleared = [String:Bool]()
+    var isDrivingHistoryCleared :Bool
     var salary:Int
     
-    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: Date, age: String,address:String,city:String, mobileNumber: String, emailId: String, userName: String, password: String,drivingLicenseNumber:String,isDrivingHistoryCleared:[String:Bool],salary:Int)
+    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: Date, age: String,address:String,city:String, mobileNumber: Int, emailId: String, userName: String, password: String,drivingLicenseNumber:String,isDrivingHistoryCleared:Bool,salary:Int) throws
      {
         self.id = id
         self.firstName = firstName
@@ -47,8 +51,15 @@ class Driver: Person {
         self.birthDate = birthDate
         self.address = address
         self.city = city
-        self.mobileNumber = mobileNumber
-        self.emailId = emailId
+        if mobileNumber.isMobileNumberValid(mobile:mobileNumber){
+                  self.mobileNumber = mobileNumber
+              }
+              else{
+                   throw ErrorHandling.InvalidMobileNumber
+              }
+       
+        
+        self.emailId = emailId 
         self.userName = userName
         self.password = password
         self.drivingLicenseNumber = drivingLicenseNumber

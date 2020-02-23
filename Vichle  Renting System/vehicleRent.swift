@@ -8,6 +8,10 @@
 
 import Foundation
 class VehicleRent:Vehicle{
+    //var driverName: String
+    
+    //var insauranceProviderName: String
+    
 var vehicleIdentificationNumber: String
 
 var vehicleDiscription: String
@@ -32,19 +36,19 @@ var basePerKm: Int
 
 var vehicleType: VehicleTypes
     
-var rentStartDate:Date;
+var rentStartDate:Date
     
-var rentEndDate:Date;
+var rentEndDate:Date
     
-var noOfDays:Int;
+//var noOfDays:Int?
    
-var vehicle:String;
+
     
-var kmsDrived:Int;
+var kmsDrived:Int
 
-var totalBill:Double;
+var totalBill:Double?
 
-    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,rentStartDate:Date,rentEndDate:Date ,noOfDays:Int,kmsDrived:Int,baseRatePerDay:Int,basePerKm:Int)
+    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,rentStartDate: Date,rentEndDate: Date ,kmsDrived:Int,baseRatePerDay:Int,basePerKm:Int)
         {
             self.vehicleIdentificationNumber = vehicleIdentificationNumber
             self.vehicleDiscription = vehicleDiscription
@@ -61,14 +65,15 @@ var totalBill:Double;
             self.rentStartDate = rentStartDate
             self.rentEndDate = rentEndDate
             self.kmsDrived = kmsDrived
-            self.totalBill = calculateTotalBill(baseRatePerDay: self.baseRatePerDay, basePerKm: self.basePerKm, kmsDrived: self.kmsDrived)
-            self.noOfDays = noOfDays
+            
+            //self.noOfDays = noOfDays
+            
             
         }
-    func calculateTotalBill(baseRatePerDay:Int,basePerKm:Int,kmsDrived:Int)->Double
+    func calculateTotalBill(RatePerDay:Int,PerKm:Int,kmDrived:Int,noOfDays:Int)
     {
-        let bill = Double((baseRatePerDay*noOfDays)+(basePerKm*kmsDrived))
-        return bill
+        self.totalBill = Double((RatePerDay*noOfDays)+(PerKm*kmDrived))
+        print(self.totalBill ?? 0.0)
     }
         func display() {
             
@@ -77,9 +82,9 @@ var totalBill:Double;
             print("Vehicle Disctription : \(self.vehicleDiscription)")
             print("Manufacturer Name :\(self.manufacturerName) ")
             print("Is Self Drive :\(self.isSelfDrive)")
-            print("Driver Name :\(self.driverName) ")
+            print("Driver Name :\(String(describing: self.driverName)) ")
             print("Is Insured :\(self.isInsured)")
-            print("Insaurance Provider Name :\(self.insauranceProviderName)")
+            print("Insaurance Provider Name :\(String(describing: self.insauranceProviderName))")
             print("No Of Seats :\(self.noOfSeats)")
             print("Fuel Type :\(self.fuelType)")
             print("Base Rate Per Day :\(self.baseRatePerDay)")
@@ -88,7 +93,7 @@ var totalBill:Double;
             print("rentStartDate :\(self.rentStartDate) ")
             print("rentEndDate :\(self.rentEndDate)")
             print("KMs Drived :\(self.kmsDrived)")
-            print("Total Bill :\(self.totalBill)")
+            print("Total Bill :\(calculateTotalBill(RatePerDay: baseRatePerDay, PerKm: basePerKm, kmDrived: kmsDrived,noOfDays:5))")
     
         
         }

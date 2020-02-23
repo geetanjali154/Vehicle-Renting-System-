@@ -7,7 +7,11 @@
 //
 
 import Foundation
-class Owner: Person{
+class Owner: Person{ 
+    //var emailId: String
+    
+    //var password: String
+    
     
 
     
@@ -27,13 +31,13 @@ class Owner: Person{
     
     var city: String
     
-    var mobileNumber: String
+    var mobileNumber: Int
     
-    var emailId: String?
+    var emailId: String
     
     var userName: String
     
-    var password: String?
+    var password: String
     
     var  companyTitle:String
     
@@ -41,15 +45,25 @@ class Owner: Person{
     
     var website:String
     
-    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: Date, age: String,address:String,city:String, mobileNumber: String, emailId: String, userName: String, password: String,companyTitle:String,businessLandLineNumber:String,website:String)
+    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: Date, age: String,address:String,city:String, mobileNumber: Int, emailId: String, userName: String, password: String,companyTitle:String,businessLandLineNumber:String,website:String) throws
     {
                self.id = id
                self.firstName = firstName
                self.lastName = lastName
                self.gender = gender
                self.birthDate = birthDate
-               self.mobileNumber = mobileNumber
-               self.emailId = emailId
+        if mobileNumber.isMobileNumberValid(mobile:mobileNumber){
+                         self.mobileNumber = mobileNumber
+                     }
+                     else{
+                          throw ErrorHandling.InvalidMobileNumber
+                     }
+              if emailId.isEmailValid(email:emailId){
+                  self.emailId = emailId
+              }
+              else{
+                   throw ErrorHandling.InvalidEmail
+              }
                self.userName = userName
                self.password = password
                self.address = address

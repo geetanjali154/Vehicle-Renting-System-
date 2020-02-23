@@ -20,7 +20,7 @@ protocol Person:DisplayDelegate{
     var age : Int?{get set}
     var address:String { get set }
     var city :String { get set }
-    var mobileNumber:String{get set}
+    var mobileNumber:Int{get set}
     var emailId:String{get set}
     var userName:String{get set}
     var password:String{get set}

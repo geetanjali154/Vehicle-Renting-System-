@@ -10,6 +10,10 @@ import Foundation
 class Customers:Person{
     var emailId: String
     
+    //var emailId: String?
+    
+    //var emailId: String?
+    
     var password: String
     
      var id: Int
@@ -29,28 +33,41 @@ class Customers:Person{
     var city :String
       
     
-    var mobileNumber: String
+    var mobileNumber: Int
     
     var userName: String
     var objVehicle:VehicleRent
     
     
   
-    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: Date, age: String,address:String,city:String, mobileNumber: String, emailId: String, userName: String, password: String,objVehicle:VehicleRent )
+    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: Date, address:String, city:String, mobileNumber: Int, emailId: String, userName: String, password: String,objVehicle:VehicleRent ) throws
     {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
         self.gender = gender
         self.birthDate = birthDate
-        self.mobileNumber = mobileNumber
-        self.emailId = emailId
-        self.userName = userName
+        
+       self.userName = userName
         self.password = password
         self.address = address
         self.city = city
         self.objVehicle=objVehicle
-    }
+        if emailId.isEmailValid(email:emailId){
+                   self.emailId = emailId
+               }
+               else{
+                    throw ErrorHandling.InvalidEmail
+               }
+        if mobileNumber.isMobileNumberValid(mobile:mobileNumber){
+        self.mobileNumber = mobileNumber
+                    }
+        else{
+            throw ErrorHandling.InvalidMobileNumber
+            }
+           } 
+              
+    
     func display() {
         print("************* CUSTOMER DETAILS **************")
         print("Customer ID : \(self.id)")

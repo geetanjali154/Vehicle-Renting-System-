@@ -22,11 +22,11 @@ class Car:Vehicle{
     
     var isSelfDrive: Bool
     
-    var driverName: String
+    var driverName: String?
     
     var isInsured: Bool
     
-    var insauranceProviderName: String
+    var insauranceProviderName: String?
     
     var noOfSeats: Int
     
@@ -73,9 +73,9 @@ class Car:Vehicle{
         print("Car Color :\(self.carColor)")
         print("Manufacturer Name :\(self.manufacturerName) ")
         print("Is Self Drive :\(self.isSelfDrive)")
-        print("Driver Name :\(self.driverName) ")
+        print("Driver Name :\(String(describing: self.driverName)) ")
         print("Is Insured :\(self.isInsured)")
-        print("Insaurance Provider Name :\(self.insauranceProviderName)")
+        print("Insaurance Provider Name :\(String(describing: self.insauranceProviderName))")
         print("No Of Seats :\(self.noOfSeats)")
         print("Fuel Type :\(self.fuelType)")
         print("Base Rate Per Day :\(self.baseRatePerDay)")

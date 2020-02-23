@@ -10,7 +10,7 @@ import Foundation
 enum busType{
     case MINI,VOLVO
     }
-class Bus: Vehicle {
+class Bus: Vehicle { 
     var vehicleType: VehicleTypes
     
     var vehicleIdentificationNumber: String
@@ -21,11 +21,11 @@ class Bus: Vehicle {
     
     var isSelfDrive: Bool
     
-    var driverName: String
+    var driverName: String?
     
     var isInsured: Bool
     
-    var insauranceProviderName: String
+    var insauranceProviderName: String?
     
     var noOfSeats: Int
     
@@ -68,9 +68,9 @@ class Bus: Vehicle {
         print("Bus Type :\(self.typeOfBus)")
         print("Manufacturer Name :\(self.manufacturerName) ")
         print("Is Self Drive :\(self.isSelfDrive)")
-        print("Driver Name :\(self.driverName) ")
+        print("Driver Name :\(self.driverName ?? "It is self Drive") ")
         print("Is Insured :\(self.isInsured)")
-        print("Insaurance Provider Name :\(self.insauranceProviderName)")
+        print("Insaurance Provider Name :\(String(describing: self.insauranceProviderName))")
         print("No Of Seats :\(self.noOfSeats)")
         print("Fuel Type :\(self.fuelType)")
         print("Base Rate Per Day :\(self.baseRatePerDay)")

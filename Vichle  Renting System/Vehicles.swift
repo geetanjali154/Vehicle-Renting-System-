@@ -20,9 +20,9 @@ protocol Vehicle:DisplayDelegate
     var vehicleDiscription :String { get set }
     var manufacturerName :String { get set }
     var isSelfDrive : Bool { get set }
-    var driverName:String { get set }
+    var driverName:String? { get set }
     var isInsured:  Bool { get set }
-    var insauranceProviderName : String { get set }
+    var insauranceProviderName : String? { get set }
     var noOfSeats: Int { get set }
     var fuelType: typesOfFuel { get set }
     var baseRatePerDay:Int { get set }
@@ -35,7 +35,7 @@ extension Vehicle{
     func display(){
     print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
     print("Vehicle Disctription : \(self.vehicleDiscription)")
-    print("Bus Type :\(self.typeOfBus)")
+    //print("Bus Type :\(self.typeOfBus)")
     }
 }
 
