@@ -16,11 +16,11 @@ var manufacturerName: String
 
 var isSelfDrive: Bool
 
-var driverName: String
+var driverName: String?
 
 var isInsured: Bool
 
-var insauranceProviderName: String
+var insauranceProviderName: String?
 
 var noOfSeats: Int
 
@@ -44,7 +44,7 @@ var kmsDrived:Int;
 
 var totalBill:Double;
 
-    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,isSelfDrive : Bool,driverName:String,isInsured:Bool,insauranceProviderName : String,noOfSeats: Int,fuelType: typesOfFuel,rentStartDate:Date,rentEndDate:Date,KmsDerived:Int ,noOfDays:Int,vehicle:String,kmsDrived:Int,baseRatePerDay:Int,basePerKm:Int,totalBill:Double)
+    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,rentStartDate:Date,rentEndDate:Date ,noOfDays:Int,kmsDrived:Int,baseRatePerDay:Int,basePerKm:Int)
         {
             self.vehicleIdentificationNumber = vehicleIdentificationNumber
             self.vehicleDiscription = vehicleDiscription
@@ -61,21 +61,21 @@ var totalBill:Double;
             self.rentStartDate = rentStartDate
             self.rentEndDate = rentEndDate
             self.kmsDrived = kmsDrived
-            self.totalBill = totalBill
+            self.totalBill = calculateTotalBill(baseRatePerDay: self.baseRatePerDay, basePerKm: self.basePerKm, kmsDrived: self.kmsDrived)
             self.noOfDays = noOfDays
-            self.vehicle = vehicle
+            
         }
-        
+    func calculateTotalBill(baseRatePerDay:Int,basePerKm:Int,kmsDrived:Int)->Double
+    {
+        let bill = Double((baseRatePerDay*noOfDays)+(basePerKm*kmsDrived))
+        return bill
+    }
         func display() {
             
             print("_____________Bus Details________________")
             print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
             print("Vehicle Disctription : \(self.vehicleDiscription)")
             print("Manufacturer Name :\(self.manufacturerName) ")
-            print("Vehicle Type :\(self.vehicleType)")
-            print("rentStartDate :\(self.rentStartDate) ")
-            print("rentEndDate :\(self.rentEndDate)")
-            print("KMs Drived :\(self.kmsDrived)")
             print("Is Self Drive :\(self.isSelfDrive)")
             print("Driver Name :\(self.driverName) ")
             print("Is Insured :\(self.isInsured)")
@@ -84,6 +84,12 @@ var totalBill:Double;
             print("Fuel Type :\(self.fuelType)")
             print("Base Rate Per Day :\(self.baseRatePerDay)")
             print("Base Per KM :\(self.basePerKm)" )
+            print("Vehicle Type :\(self.vehicleType)")
+            print("rentStartDate :\(self.rentStartDate) ")
+            print("rentEndDate :\(self.rentEndDate)")
+            print("KMs Drived :\(self.kmsDrived)")
+            print("Total Bill :\(self.totalBill)")
+    
         
         }
         

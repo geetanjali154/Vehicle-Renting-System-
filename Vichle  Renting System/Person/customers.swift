@@ -8,7 +8,11 @@
 
 import Foundation
 class Customers:Person{
-    var id: Int
+    var emailId: String
+    
+    var password: String
+    
+     var id: Int
     
     var firstName: String
     
@@ -27,14 +31,12 @@ class Customers:Person{
     
     var mobileNumber: String
     
-    var emailId: String?
-    
     var userName: String
+    var objVehicle:VehicleRent
     
-    var password: String?
     
   
-    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: Date, age: String, mobileNumber: String, emailId: String, userName: String, password: String ,address:String,city:String)
+    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: Date, age: String,address:String,city:String, mobileNumber: String, emailId: String, userName: String, password: String,objVehicle:VehicleRent )
     {
         self.id = id
         self.firstName = firstName
@@ -47,7 +49,7 @@ class Customers:Person{
         self.password = password
         self.address = address
         self.city = city
-       
+        self.objVehicle=objVehicle
     }
     func display() {
         print("************* CUSTOMER DETAILS **************")
