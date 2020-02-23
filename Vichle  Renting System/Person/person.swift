@@ -16,8 +16,8 @@ protocol Person:DisplayDelegate{
     var firstName:String{get set}
     var lastName:String{get set}
     var gender:Gender{get set}
-    var birthDate:Date{get set}
-    var age : Int?{get set}
+    var birthDate:String{get set}
+    var age : String?{get set}
     var address:String { get set }
     var city :String { get set }
     var mobileNumber:Int{get set}

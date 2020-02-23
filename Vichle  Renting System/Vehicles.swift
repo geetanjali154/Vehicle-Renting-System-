@@ -29,14 +29,11 @@ protocol Vehicle:DisplayDelegate
     var basePerKm:Int { get set }
     var vehicleType:VehicleTypes{get set}
     
-    //func display()
-}
-extension Vehicle{
-    func display(){
-    print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
-    print("Vehicle Disctription : \(self.vehicleDiscription)")
-    //print("Bus Type :\(self.typeOfBus)")
-    }
+    
+
+    func display()
+    
+    
 }
 
     

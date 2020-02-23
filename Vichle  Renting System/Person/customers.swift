@@ -9,11 +9,6 @@
 import Foundation
 class Customers:Person{
     var emailId: String
-    
-    //var emailId: String?
-    
-    //var emailId: String?
-    
     var password: String
     
      var id: Int
@@ -21,12 +16,21 @@ class Customers:Person{
     var firstName: String
     
     var lastName: String
+    var fullName:String{
+        return "\(firstName) \(lastName)"
+    }
     
     var gender: Gender
     
-    var birthDate: Date
+    var birthDate: String
     
-    var age: Int?
+    var age: String?
+    var customerAge:String?{
+        get{
+            return age
+        }
+    }
+    
     
     var address:String
       
@@ -40,13 +44,13 @@ class Customers:Person{
     
     
   
-    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: Date, address:String, city:String, mobileNumber: Int, emailId: String, userName: String, password: String,objVehicle:VehicleRent ) throws
+    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: String, address:String, city:String, mobileNumber: Int, emailId: String, userName: String, password: String,objVehicle:VehicleRent ) throws
     {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
         self.gender = gender
-        self.birthDate = birthDate
+        self.birthDate = birthDate.dateSet(input:birthDate)
         
        self.userName = userName
         self.password = password
@@ -65,15 +69,18 @@ class Customers:Person{
         else{
             throw ErrorHandling.InvalidMobileNumber
             }
+        self.age=AgeCalculation.calculateAge(birthDate: birthDate)
            } 
-              
+    
+   
     
     func display() {
         print("************* CUSTOMER DETAILS **************")
         print("Customer ID : \(self.id)")
-        print("Customer Full Name: \(self.firstName)" ,"\(self.lastName)")
+        print("Customer Full Name: \(self.fullName)")
         print("Gender :\(self.gender)")
-        print("Birth Date :\(self.birthDate)")
+         print("Birth Date :\(self.birthDate)")
+        print("Age:  \(String(describing: self.age))")
         print("Mobile Number :\(self.mobileNumber)")
         print("Address :\(self.address)")
         print("City :\(self.city)")

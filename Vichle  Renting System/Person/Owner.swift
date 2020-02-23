@@ -8,13 +8,7 @@
 
 import Foundation
 class Owner: Person{ 
-    //var emailId: String
-    
-    //var password: String
-    
-    
-
-    
+ 
     var id: Int
     
     var firstName: String
@@ -23,9 +17,9 @@ class Owner: Person{
     
     var gender: Gender
     
-    var birthDate: Date
+    var birthDate: String
     
-    var age: Int?
+    var age: String?
     
     var address: String
     
@@ -38,20 +32,20 @@ class Owner: Person{
     var userName: String
     
     var password: String
-    
+     
     var  companyTitle:String
     
     var businessLandLineNumber:String
     
     var website:String
     
-    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: Date, age: String,address:String,city:String, mobileNumber: Int, emailId: String, userName: String, password: String,companyTitle:String,businessLandLineNumber:String,website:String) throws
+    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: String, age: String,address:String,city:String, mobileNumber: Int, emailId: String, userName: String, password: String,companyTitle:String,businessLandLineNumber:String,website:String) throws
     {
                self.id = id
                self.firstName = firstName
                self.lastName = lastName
                self.gender = gender
-               self.birthDate = birthDate
+               self.birthDate = birthDate.dateSet(input:birthDate)
         if mobileNumber.isMobileNumberValid(mobile:mobileNumber){
                          self.mobileNumber = mobileNumber
                      }
@@ -71,7 +65,7 @@ class Owner: Person{
                self.companyTitle = companyTitle
                self.businessLandLineNumber = businessLandLineNumber
                self.website = website
-    
+                self.age=AgeCalculation.calculateAge(birthDate: birthDate)
        
     }
     
@@ -80,7 +74,8 @@ class Owner: Person{
                print("Owner ID : \(self.id)")
                print("Owner Full Name: \(self.firstName)" ,"\(self.lastName)")
                print("Gender :\(self.gender)")
-               print("Birth Date :\(self.birthDate)")
+                print("Birth Date :\(self.birthDate)")
+        print("Age:  \(String(describing: self.age))")
                print("Mobile Number :\(self.mobileNumber)")
                print("Company Titles :\(self.companyTitle)")
                print("Business Landline Number : \(self.businessLandLineNumber)")
@@ -91,8 +86,4 @@ class Owner: Person{
                print("UserName :\(self.userName)")
                print("Password :\(String(describing: self.password))")
     }
-    
-    
-    
-    
-}
+    }

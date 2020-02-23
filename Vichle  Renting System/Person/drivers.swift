@@ -8,10 +8,7 @@
 
 import Foundation
 class Driver: Person { 
-    //var emailId: String
-    
-    //var password: String
-    
+ 
     var id: Int
     
     var firstName: String
@@ -20,15 +17,14 @@ class Driver: Person {
     
     var gender: Gender
     
-    var birthDate: Date
+    var birthDate: String
     
-    var age: Int?
+    var age: String?
     
     var address:String
       
     var city :String
       
-    
     var mobileNumber: Int
     
     var emailId: String
@@ -42,13 +38,13 @@ class Driver: Person {
     var isDrivingHistoryCleared :Bool
     var salary:Int
     
-    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: Date, age: String,address:String,city:String, mobileNumber: Int, emailId: String, userName: String, password: String,drivingLicenseNumber:String,isDrivingHistoryCleared:Bool,salary:Int) throws
+    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: String, age: String,address:String,city:String, mobileNumber: Int, emailId: String, userName: String, password: String,drivingLicenseNumber:String,isDrivingHistoryCleared:Bool,salary:Int) throws
      {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
         self.gender = gender
-        self.birthDate = birthDate
+        self.birthDate = birthDate.dateSet(input:birthDate)
         self.address = address
         self.city = city
         if mobileNumber.isMobileNumberValid(mobile:mobileNumber){
@@ -58,24 +54,23 @@ class Driver: Person {
                    throw ErrorHandling.InvalidMobileNumber
               }
        
-        
-        self.emailId = emailId 
+        self.emailId = emailId
         self.userName = userName
         self.password = password
         self.drivingLicenseNumber = drivingLicenseNumber
         self.salary = salary
         self.isDrivingHistoryCleared = isDrivingHistoryCleared
+        self.age=AgeCalculation.calculateAge(birthDate: birthDate)
         
     }
         
-    
-           func display(){
-        
+    func display(){
             print("**************DRIVER DETAILS***************")
             print("Driver ID : \(self.id)")
             print("Driver Full Name: \(self.firstName)" ,"\(self.lastName)")
             print("Gender :\(self.gender)")
             print("Birth Date :\(self.birthDate)")
+            print("Age:  \(String(describing: self.age))")
             print("Mobile Number :\(self.mobileNumber)")
             print("Address :\(self.address)")
             print("City :\(self.city)")
