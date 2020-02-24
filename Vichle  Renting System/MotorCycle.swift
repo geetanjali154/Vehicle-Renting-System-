@@ -35,6 +35,7 @@ class MotorCycle: Vehicle {
     var milage:Int
     
     var maxTopSpeed: Int
+     var driver = [Int: Driver]()
     
     init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,milage:Int,maxTopSpeed:Int,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int)
     {
@@ -55,6 +56,14 @@ class MotorCycle: Vehicle {
         self.basePerKm = basePerKm
     
     }
+    func addDriver(driverId: Int, driverObj: Driver)
+       {
+           driver.updateValue(driverObj, forKey: driverId)
+       }
+    func removeDriver(driverId: Int, driverObj: Driver)
+    {
+        driver.removeValue(forKey: driverId)
+    }
     
     func display() {
         print("_____________MotorCycle Details________________")
@@ -72,8 +81,19 @@ class MotorCycle: Vehicle {
         print("Fuel Type :\(self.fuelType)")
         print("Base Rate Per Day :\(self.baseRatePerDay.currency())")
         print("Base Per KM :\(self.basePerKm.currency())" )
+        
+            print("*******************************************************")
+        if driver.count==0{
+            print("IT IS SELF DRIVE")
+            print("*******************************************************")
+        }
+        else{
+            for i in driver{
+            i.value.display()
+            print("*******************************************************")
+        }
       
-    }
+        }}
     
 
 }

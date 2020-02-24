@@ -81,13 +81,21 @@ class Car:Vehicle{
         print("Fuel Type :\(self.fuelType)")
             print("Base Rate Per Day :\(self.baseRatePerDay.currency())")
             print("Base Per KM :\(self.basePerKm.currency())" )
+        
         if driver.count==0{
+            print("*******************************************************")
             print("IT IS SELF DRIVE**NO DRIVER")
+            print("*******************************************************")
         }
         else{
+            print("*******************************************************")
         for i in driver{
             i.value.display()
-            }}}
+            }
+            
+        }
+        print("*******************************************************")
+    }
     
 
 }

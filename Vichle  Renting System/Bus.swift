@@ -40,6 +40,7 @@ class Bus: Vehicle {
     var isAccessibilityServiceAvailable: Bool;
     
     var isWifiAvailable: Bool;
+      var driver = [Int: Driver]()
     
     init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int,isAccessibilityServiceAvailable: Bool,isWifiAvailable: Bool)
     {
@@ -58,6 +59,15 @@ class Bus: Vehicle {
         self.isAccessibilityServiceAvailable = isAccessibilityServiceAvailable
         self.isWifiAvailable = isWifiAvailable
     }
+    func addDriver(driverId: Int, driverObj: Driver)
+          {
+              driver.updateValue(driverObj, forKey: driverId)
+          }
+       func removeDriver(driverId: Int, driverObj: Driver)
+       {
+           driver.removeValue(forKey: driverId)
+       }
+          
     
     func display() {
         
@@ -76,6 +86,18 @@ class Bus: Vehicle {
         print("Base Per KM :\(self.basePerKm.currency())" )
         print("Is Accesibility Service Available :\(self.isAccessibilityServiceAvailable)")
         print("Is Wifi Available :\(self.isWifiAvailable)")
+        if driver.count==0{
+            print("*******************************************************")
+                  print("IT IS SELF DRIVE**NO DRIVER")
+            print("*******************************************************")
+              }
+              else{
+            print("*******************************************************")
+              for i in driver{
+                  i.value.display()
+                  }
+            print("*******************************************************")
+        }
     }
     
 
