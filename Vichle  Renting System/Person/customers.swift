@@ -99,9 +99,13 @@ class Customers:Person{
         print("Password :\(String(describing: self.password))")
         print("     ------VEHICLE RENTED BY THE CUSTOMER------        ")
                        print("*******************************************")
+        if objVehicle.count == 0{
+            print("NO VEHICLE RENTED")
+        }
+        else{
         for i in objVehicle{
             i.value.display()
-        }
+            }}
         
     }
     

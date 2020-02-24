@@ -79,7 +79,7 @@ class Driver: Person {
             print("Password :\(String(describing: self.password))")
             print("Driving License Number : \(self.drivingLicenseNumber)")
             print("Is Driving History Cleared ? : \(self.isDrivingHistoryCleared)")
-            print("Salary : \(self.salary)")
+        print("Salary : \(self.salary.currency())")
         
     }
     
