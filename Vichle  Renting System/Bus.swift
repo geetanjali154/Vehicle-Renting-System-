@@ -64,7 +64,7 @@ class Bus: Vehicle {
         print("_____________Bus Details________________")
         print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
         print("Vehicle Disctription : \(self.vehicleDiscription)")
-        print("Bus Type :\(self.typeOfBus)")
+      
         print("Manufacturer Name :\(self.manufacturerName) ")
         print("Is Self Drive :\(self.isSelfDrive)")
         print("Driver Name :\(self.driverName ?? "It is self Drive") ")
@@ -72,8 +72,8 @@ class Bus: Vehicle {
         print("Insaurance Provider Name :\(String(describing: self.insauranceProviderName))")
         print("No Of Seats :\(self.noOfSeats)")
         print("Fuel Type :\(self.fuelType)")
-        print("Base Rate Per Day :\(self.baseRatePerDay)")
-        print("Base Per KM :\(self.basePerKm)" )
+        print("Base Rate Per Day :\(self.baseRatePerDay.currency())")
+        print("Base Per KM :\(self.basePerKm.currency())" )
         print("Is Accesibility Service Available :\(self.isAccessibilityServiceAvailable)")
         print("Is Wifi Available :\(self.isWifiAvailable)")
     }

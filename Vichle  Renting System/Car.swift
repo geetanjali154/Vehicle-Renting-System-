@@ -35,20 +35,14 @@ class Car:Vehicle{
     var baseRatePerDay: Int
     
     var basePerKm: Int
-    
-  
-    
-    var carType:carTypes
-    
     var carColor: String
     var driver = [Int: Driver]()
     
-    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,carColor:String,isSelfDrive : Bool,driverName:String,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int,driver:[Int: Driver])
+    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,carColor:String,isSelfDrive : Bool,driverName:String,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int)
     {
         self.vehicleIdentificationNumber = vehicleIdentificationNumber
         self.vehicleDiscription = vehicleDiscription
         self.vehicleType = vehicleType
-        
         self.manufacturerName = manufacturerName
         self.isSelfDrive = isSelfDrive
         self.driverName = driverName
@@ -61,6 +55,16 @@ class Car:Vehicle{
        self.carColor = carColor
     }
     
+    func addDriver(driverId: Int, driverObj: Driver)
+       {
+           driver.updateValue(driverObj, forKey: driverId)
+       }
+    func removeDriver(driverId: Int, driverObj: Driver)
+    {
+        driver.removeValue(forKey: driverId)
+    }
+       
+     
     func display() {
         print("_____________Car Details________________")
         print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
@@ -75,10 +79,15 @@ class Car:Vehicle{
         print("Insaurance Provider Name :\(String(describing: self.insauranceProviderName))")
         print("No Of Seats :\(self.noOfSeats)")
         print("Fuel Type :\(self.fuelType)")
-        print("Base Rate Per Day :\(self.baseRatePerDay)")
-        print("Base Per KM :\(self.basePerKm)" )
-      
-    }
+            print("Base Rate Per Day :\(self.baseRatePerDay.currency())")
+            print("Base Per KM :\(self.basePerKm.currency())" )
+        if driver.count==0{
+            print("IT IS SELF DRIVE**NO DRIVER")
+        }
+        else{
+        for i in driver{
+            i.value.display()
+            }}}
     
 
 }

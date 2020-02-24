@@ -7,98 +7,65 @@
 //
 
 import Foundation
-class VehicleRent:Vehicle{
-    //var driverName: String
-    
-    //var insauranceProviderName: String
-    
-var vehicleIdentificationNumber: String
+class VehicleRent:DisplayDelegate{
+    var vehicleRentId:Int
+    var rentStartDate:String
+    var rentEndDate:String
+    var vehicles = [String: Vehicle]()
+    var kmDrived : Int
+    var totalBill : Float = 0.0
+    var noOfDays:Int=0
+  
 
-var vehicleDiscription: String
-
-var manufacturerName: String
-
-var isSelfDrive: Bool
-
-var driverName: String?
-
-var isInsured: Bool
-
-var insauranceProviderName: String?
-
-var noOfSeats: Int
-
-var fuelType: typesOfFuel
-
-var baseRatePerDay: Int
-
-var basePerKm: Int
-
-var vehicleType: VehicleTypes
-    
-var rentStartDate:Date
-    
-var rentEndDate:Date
-    
-//var noOfDays:Int?
-   
-
-    
-var kmsDrived:Int
-
-var totalBill:Double?
-
-    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,rentStartDate: Date,rentEndDate: Date ,kmsDrived:Int,baseRatePerDay:Int,basePerKm:Int)
+init(vehicleRentId:Int,rentStartDate: String,rentEndDate: String ,kmDrived:Int)
         {
-            self.vehicleIdentificationNumber = vehicleIdentificationNumber
-            self.vehicleDiscription = vehicleDiscription
-            self.vehicleType = vehicleType
-            self.manufacturerName = manufacturerName
-            self.isSelfDrive = isSelfDrive
-            self.driverName = driverName
-            self.isInsured = isInsured
-            self.insauranceProviderName = insauranceProviderName
-            self.noOfSeats = noOfSeats
-            self.fuelType = fuelType
-            self.baseRatePerDay = baseRatePerDay
-            self.basePerKm = basePerKm
+            self.vehicleRentId=vehicleRentId
             self.rentStartDate = rentStartDate
             self.rentEndDate = rentEndDate
-            self.kmsDrived = kmsDrived
-            
-            //self.noOfDays = noOfDays
-            
-            
-        }
-    func calculateTotalBill(RatePerDay:Int,PerKm:Int,kmDrived:Int,noOfDays:Int)
+            self.kmDrived = kmDrived
+            self.noOfDays = calculateTotalDays(startDate: rentStartDate, endDate: rentEndDate)
+            }
+    func addVehicle(vehicle: Vehicle, vinNumber: String)
     {
-        self.totalBill = Double((RatePerDay*noOfDays)+(PerKm*kmDrived))
-        print(self.totalBill ?? 0.0)
+        vehicles.updateValue(vehicle, forKey: vinNumber)
+    }
+    
+    func removeVehicle(vinNumber: String)
+    {
+        vehicles.removeValue(forKey: vinNumber)
+    }
+    //func calculateTotalBill(RentPerDay:Int,RentPerKm:Int,kmDrived:Int,noOfDays:Int)
+    //{
+     //   self.totalBill = Float((RentPerDay*noOfDays)+(RentPerKm*kmDrived))
+    //    print(self.totalBill)
+   // }
+    func calculateTotalDays(startDate:String,endDate:String)->Int{
+        let d1=AgeCalculation.stringToDate(string: startDate)
+         let d2=AgeCalculation.stringToDate(string: endDate)
+        let current = Calendar.current
+        let numberOfDays = current.dateComponents([Calendar.Component.day], from: d1, to: d2)
+        return numberOfDays.day!
     }
         func display() {
-            
-            print("_____________Bus Details________________")
-            print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
-            print("Vehicle Disctription : \(self.vehicleDiscription)")
-            print("Manufacturer Name :\(self.manufacturerName) ")
-            print("Is Self Drive :\(self.isSelfDrive)")
-            print("Driver Name :\(String(describing: self.driverName)) ")
-            print("Is Insured :\(self.isInsured)")
-            print("Insaurance Provider Name :\(String(describing: self.insauranceProviderName))")
-            print("No Of Seats :\(self.noOfSeats)")
-            print("Fuel Type :\(self.fuelType)")
-            print("Base Rate Per Day :\(self.baseRatePerDay)")
-            print("Base Per KM :\(self.basePerKm)" )
-            print("Vehicle Type :\(self.vehicleType)")
-            print("rentStartDate :\(self.rentStartDate) ")
-            print("rentEndDate :\(self.rentEndDate)")
-            print("KMs Drived :\(self.kmsDrived)")
-            print("Total Bill :\(calculateTotalBill(RatePerDay: baseRatePerDay, PerKm: basePerKm, kmDrived: kmsDrived,noOfDays:5))")
-    
-        
-        }
-        
-
+           
+                for i in vehicles
+                {
+                    i.value.display()
+                    totalBill = Float((i.value.baseRatePerDay * self.noOfDays)+(i.value.basePerKm * self.kmDrived))
+                    
+                    print("\n-------------------- RENT DETAILS -------------------\n")
+                    print("Rent Start Date : \(self.rentStartDate)")
+                    print("Rent End Date : \(self.rentEndDate)")
+                    print("Total Days: \(self.noOfDays)")
+                   
+                    print("Number of KM Drived : \(self.kmDrived)")
+                   
+                    print("=====================================================")
+                    print("Total rent to pay : \(totalBill.currency())")
+                    print("=====================================================")
+                    
+                }
+            }
     }
 
     

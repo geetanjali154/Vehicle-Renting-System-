@@ -32,16 +32,11 @@ class MotorCycle: Vehicle {
     var baseRatePerDay: Int
     
     var basePerKm: Int
-    
-  
-    
-   
-    
     var milage:Int
     
     var maxTopSpeed: Int
     
-    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,milage:Int,maxTopSpeed:Int,isSelfDrive : Bool,driverName:String,isInsured:Bool,insauranceProviderName : String,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int)
+    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,milage:Int,maxTopSpeed:Int,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int)
     {
         self.vehicleIdentificationNumber = vehicleIdentificationNumber
         self.vehicleDiscription = vehicleDiscription
@@ -62,21 +57,21 @@ class MotorCycle: Vehicle {
     }
     
     func display() {
-        print("_____________Car Details________________")
+        print("_____________MotorCycle Details________________")
         print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
         print("Vehicle Disctription : \(self.vehicleDiscription)")
         print("Vehicle Type : \(self.vehicleType)")
         print("Manufacturer Name :\(self.manufacturerName) ")
-        print("Milage :\(self.milage)")
-        print("Maximum Top Speed :\(self.maxTopSpeed)")
+        print("Milage :\(self.milage.speed())")
+        print("Maximum Top Speed :\(self.maxTopSpeed.speed())")
         print("Is Self Drive :\(self.isSelfDrive)")
         print("Driver Name :\(String(describing: self.driverName)) ")
         print("Is Insured :\(self.isInsured)")
         print("Insaurance Provider Name :\(String(describing: self.insauranceProviderName))")
         print("No Of Seats :\(self.noOfSeats)")
         print("Fuel Type :\(self.fuelType)")
-        print("Base Rate Per Day :\(self.baseRatePerDay)")
-        print("Base Per KM :\(self.basePerKm)" )
+        print("Base Rate Per Day :\(self.baseRatePerDay.currency())")
+        print("Base Per KM :\(self.basePerKm.currency())" )
       
     }
     
