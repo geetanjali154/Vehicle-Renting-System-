@@ -33,21 +33,19 @@ class MotorCycle: Vehicle {
     
     var basePerKm: Int
     
-    var typeOfBus:busType
+  
     
-    var isAccessibilityServiceAvailable: Bool;
-    
-    var isWifiAvailable: Bool;
+   
     
     var milage:Int
     
     var maxTopSpeed: Int
     
-    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,milage:Int,maxTopSpeed:Int,isSelfDrive : Bool,driverName:String,isInsured:Bool,insauranceProviderName : String,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int,typeOfBus:busType,isAccessibilityServiceAvailable: Bool,isWifiAvailable: Bool)
+    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,milage:Int,maxTopSpeed:Int,isSelfDrive : Bool,driverName:String,isInsured:Bool,insauranceProviderName : String,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int)
     {
         self.vehicleIdentificationNumber = vehicleIdentificationNumber
         self.vehicleDiscription = vehicleDiscription
-        self.typeOfBus = typeOfBus
+   
         self.vehicleType = vehicleType
         self.milage = milage
         self.maxTopSpeed = maxTopSpeed
@@ -60,8 +58,7 @@ class MotorCycle: Vehicle {
         self.fuelType = fuelType
         self.baseRatePerDay = baseRatePerDay
         self.basePerKm = basePerKm
-        self.isAccessibilityServiceAvailable = isAccessibilityServiceAvailable
-        self.isWifiAvailable = isWifiAvailable
+    
     }
     
     func display() {
@@ -80,8 +77,7 @@ class MotorCycle: Vehicle {
         print("Fuel Type :\(self.fuelType)")
         print("Base Rate Per Day :\(self.baseRatePerDay)")
         print("Base Per KM :\(self.basePerKm)" )
-        print("Is Accesibility Service Available :\(self.isAccessibilityServiceAvailable)")
-        print("Is Wifi Available :\(self.isWifiAvailable)")
+      
     }
     
 

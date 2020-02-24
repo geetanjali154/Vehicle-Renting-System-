@@ -40,11 +40,11 @@ class Customers:Person{
     var mobileNumber: Int
     
     var userName: String
-    var objVehicle:VehicleRent
+    var objVehicle:[VehicleRent]
     
     
   
-    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: String, address:String, city:String, mobileNumber: Int, emailId: String, userName: String, password: String,objVehicle:VehicleRent ) throws
+    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: String, address:String, city:String, mobileNumber: Int, emailId: String, userName: String, password: String,objVehicle:[VehicleRent] ) throws
     {
         self.id = id
         self.firstName = firstName
@@ -86,7 +86,7 @@ class Customers:Person{
         print("City :\(self.city)")
         print("EmailID :\(String(describing: self.emailId))")
         print("UserName :\(self.userName)")
-        print("Password :\(String(describing: self.password))")
+        print("Password :\(String(describing: self.password))") 
         
     }
     

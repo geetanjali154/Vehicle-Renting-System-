@@ -35,17 +35,16 @@ class Bus: Vehicle {
     
     var basePerKm: Int
     
-    var typeOfBus:busType
+    //var typeOfBus:busType
     
     var isAccessibilityServiceAvailable: Bool;
     
     var isWifiAvailable: Bool;
     
-    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,isSelfDrive : Bool,driverName:String,isInsured:Bool,insauranceProviderName : String,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int,typeOfBus:busType,isAccessibilityServiceAvailable: Bool,isWifiAvailable: Bool)
+    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int,isAccessibilityServiceAvailable: Bool,isWifiAvailable: Bool)
     {
         self.vehicleIdentificationNumber = vehicleIdentificationNumber
         self.vehicleDiscription = vehicleDiscription
-        self.typeOfBus = typeOfBus
         self.vehicleType = vehicleType
         self.manufacturerName = manufacturerName
         self.isSelfDrive = isSelfDrive

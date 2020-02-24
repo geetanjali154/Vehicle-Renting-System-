@@ -36,20 +36,19 @@ class Car:Vehicle{
     
     var basePerKm: Int
     
-    var isAccessibilityServiceAvailable: Bool;
-    
-    var isWifiAvailable: Bool;
+  
     
     var carType:carTypes
     
     var carColor: String
+    var driver = [Int: Driver]()
     
-    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,carType:carTypes,carColor:String,isSelfDrive : Bool,driverName:String,isInsured:Bool,insauranceProviderName : String,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int,typeOfBus:busType,isAccessibilityServiceAvailable: Bool,isWifiAvailable: Bool)
+    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,carColor:String,isSelfDrive : Bool,driverName:String,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int,driver:[Int: Driver])
     {
         self.vehicleIdentificationNumber = vehicleIdentificationNumber
         self.vehicleDiscription = vehicleDiscription
         self.vehicleType = vehicleType
-        self.carType = carType
+        
         self.manufacturerName = manufacturerName
         self.isSelfDrive = isSelfDrive
         self.driverName = driverName
@@ -59,9 +58,7 @@ class Car:Vehicle{
         self.fuelType = fuelType
         self.baseRatePerDay = baseRatePerDay
         self.basePerKm = basePerKm
-        self.isAccessibilityServiceAvailable = isAccessibilityServiceAvailable
-        self.isWifiAvailable = isWifiAvailable
-        self.carColor = carColor
+       self.carColor = carColor
     }
     
     func display() {
@@ -69,7 +66,7 @@ class Car:Vehicle{
         print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
         print("Vehicle Disctription : \(self.vehicleDiscription)")
         print("Vehicle Type : \(self.vehicleType)")
-        print("Car Type :\(self.carType)")
+       
         print("Car Color :\(self.carColor)")
         print("Manufacturer Name :\(self.manufacturerName) ")
         print("Is Self Drive :\(self.isSelfDrive)")
@@ -80,8 +77,7 @@ class Car:Vehicle{
         print("Fuel Type :\(self.fuelType)")
         print("Base Rate Per Day :\(self.baseRatePerDay)")
         print("Base Per KM :\(self.basePerKm)" )
-        print("Is Accesibility Service Available :\(self.isAccessibilityServiceAvailable)")
-        print("Is Wifi Available :\(self.isWifiAvailable)")
+      
     }
     
 

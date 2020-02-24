@@ -31,8 +31,10 @@ extension String{
         return "Incorrect Date"
     }
     
-}
+   
+    
 
+}
 extension Int{
     
    func isMobileNumberValid(mobile:Int) -> Bool{
@@ -41,5 +43,16 @@ extension Int{
     let mobileTest = NSPredicate(format: "SELF MATCHES %@", mobileNumberRegEx)
     return mobileTest.evaluate(with: mobile)*/
     }
+    func currency() -> String
+           {
+               return "$\(self)"
+           }
 }
+    extension Double{
+        func currency() -> String
+        {
+            return "$\(self)"
+        }
+    }
+
 

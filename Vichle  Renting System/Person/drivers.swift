@@ -38,7 +38,7 @@ class Driver: Person {
     var isDrivingHistoryCleared :Bool
     var salary:Int
     
-    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: String, age: String,address:String,city:String, mobileNumber: Int, emailId: String, userName: String, password: String,drivingLicenseNumber:String,isDrivingHistoryCleared:Bool,salary:Int) throws
+    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: String,address:String,city:String, mobileNumber: Int, emailId: String, userName: String, password: String,drivingLicenseNumber:String,isDrivingHistoryCleared:Bool,salary:Int) throws
      {
         self.id = id
         self.firstName = firstName
