@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD0827A623FF4D86005377E8 /* SigletonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0827A523FF4D86005377E8 /* SigletonObject.swift */; };
 		BD0D0B682402FCB70032A428 /* Age Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D0B672402FCB70032A428 /* Age Calculation.swift */; };
 		BD0D0B6A240303E20032A428 /* enum+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D0B69240303E20032A428 /* enum+extension.swift */; };
 		BD0D0B6C24038D520032A428 /* DisplayDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D0B6B24038D520032A428 /* DisplayDriver.swift */; };
@@ -37,7 +36,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BD0827A523FF4D86005377E8 /* SigletonObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigletonObject.swift; sourceTree = "<group>"; };
 		BD0D0B672402FCB70032A428 /* Age Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Age Calculation.swift"; sourceTree = "<group>"; };
 		BD0D0B69240303E20032A428 /* enum+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "enum+extension.swift"; sourceTree = "<group>"; };
 		BD0D0B6B24038D520032A428 /* DisplayDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDriver.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				BDC8BCB823F3B99D003786FB /* vehicleRent.swift */,
 				BDC8BCBE23F3BBAC003786FB /* DisplayDelegate.swift */,
 				BD465C7423F23C7B004E7C42 /* main.swift */,
-				BD0827A523FF4D86005377E8 /* SigletonObject.swift */,
 				BD0D0B672402FCB70032A428 /* Age Calculation.swift */,
 				BD0D0B69240303E20032A428 /* enum+extension.swift */,
 				BD0D0B6B24038D520032A428 /* DisplayDriver.swift */,
@@ -179,7 +176,6 @@
 				BD0D0B6A240303E20032A428 /* enum+extension.swift in Sources */,
 				BD465C7E23F23CCF004E7C42 /* customers.swift in Sources */,
 				BDC8BCB723F3B88A003786FB /* MotorCycle.swift in Sources */,
-				BD0827A623FF4D86005377E8 /* SigletonObject.swift in Sources */,
 				BD465C7523F23C7B004E7C42 /* main.swift in Sources */,
 				BD465C8223F23D08004E7C42 /* Vehicles.swift in Sources */,
 				BD0D0B682402FCB70032A428 /* Age Calculation.swift in Sources */,
