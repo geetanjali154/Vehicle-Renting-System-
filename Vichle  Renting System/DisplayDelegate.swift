@@ -8,5 +8,5 @@
 
 import Foundation
 protocol DisplayDelegate {
-    func display()
+    
 }
